@@ -7,7 +7,9 @@ Output is:
 1) body part coordinates per DeepLabCut standards
 2) an .avi of the images (this is only used for make the labelled video and/or quick viewing, not for inference)
 3) labelled video
-modified by Greg Murray 2020 May 24 n.b. activate DLC environment and pyton in cmd
+modified by Greg Murray 2020 May 24 n.b. activate DLC environment and python in cmd
+added static values for videowriter size, problem with - "ScannerError: mapping values are not allowed here
+  in "D:\BiteOscope_test_images\config.yaml", line 117, column 73"
 '''
 
 
@@ -53,7 +55,7 @@ if '.' in videoBaseName:
     videoBaseName = videoBaseName[:-2]
 
 videoName = dataDir + videoBaseName + '.avi'
-out = cv2.VideoWriter(videoName, cv2.VideoWriter_fourcc(*'DIVX'), 25, size)
+out = cv2.VideoWriter(videoName, cv2.VideoWriter_fourcc(*'DIVX'), 25, (640,480))
  
 for i in range(len(img_array)):
     out.write(img_array[i])
