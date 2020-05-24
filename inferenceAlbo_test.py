@@ -7,6 +7,7 @@ Output is:
 1) body part coordinates per DeepLabCut standards
 2) an .avi of the images (this is only used for make the labelled video and/or quick viewing, not for inference)
 3) labelled video
+modified by Greg Murray 2020 May 24 n.b. activate DLC environment and pyton in cmd
 '''
 
 
@@ -30,12 +31,12 @@ print('tensorflow version: ' + str(tf.__version__))
 
 # tf.test.gpu_device_name()
 
-config = '/Users/felix/biteOscope_repo/biteOscope/DLC_aedes/aedes01-felix-2020-01-10/config.yaml'
+config = 'D:/BiteOscope_test_images/config.yaml'
 
 
-dataDir = '/Users/felix/biteOscope_clean/test/dump/testcrops_p1.0/'
+dataDir = 'D:/BiteOscope_test_images/test_ouput/testcrops_p1.0/'
 files = sorted(glob.glob(dataDir +'*.png'))
-# saveDirMovie = '/home/felix/biteData/FFDEET/test/'
+# saveDirMovie = 'D:/BiteOscope_test_images/'
 
 img_array = []
 
